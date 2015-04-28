@@ -1,0 +1,12 @@
+button {
+    display:block;
+}
+p.showHobby {
+    background-color: rgb(184, 193, 244);
+    font-size:24px;
+    margin:0px;
+    border-bottom: 1px dashed white;
+}
+p#warning {
+    color:red;
+}

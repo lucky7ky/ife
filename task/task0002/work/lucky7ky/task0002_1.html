@@ -1,0 +1,33 @@
+<!DOCTYPE  html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>小练习1</title>
+        <link rel="stylesheet" type="text/css" href="css/task0002_1.css">
+    </head>
+    <body>
+        <!--第一阶段 -->
+        <div id="levelFirst">
+            <h1>第一阶段</h1>
+            <input type="text" id="txtFirst" style="width:300px">
+            <button onclick="level1()">Click </button>
+        </div>
+        <!--第二阶段 -->
+        <div id="levelSecond">
+            <h1>第二阶段</h1>
+            <textarea id="txtSecond" rows="10" cols="100">
+            </textarea>
+            <button onclick="level2()">Click</button>
+        </div>
+        <!--第三阶段 -->
+        <div id="levelThird">
+            <h1>第三阶段</h1>
+            <textarea id="txtThird" rows="5" cols="100" oninput="OnInput(event)">
+            </textarea>
+            <p id="warning"></p>
+            <button onclick="level3()">Click</button>
+        </div>
+        <script src="js/task0002_1.js">
+        </script>
+</body>
+</html>
