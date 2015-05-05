@@ -7,14 +7,9 @@ var bannerSlide = {
            },
     init:function() {
              this.banner = document.getElementById('banner');
-             // console.log(this);
-             // console.log(this.banner);
              this.slide_img = document.getElementsByClassName('slide_img')[0];
-             // console.log(this.slide_img);
              this.slide_a = document.getElementsByClassName('slide_btn')[0].getElementsByTagName('a');
-             // console.log(this.slide_a);
              this.img_arr = document.getElementsByClassName('slide_img')[0].getElementsByTagName('img');
-             // console.log(this.img_arr);
              if (this.config.auto) {
                  this.play();
              };
@@ -28,7 +23,6 @@ var bannerSlide = {
                  };
                  bannerSlide.transit();
              },3000)
-             this.slide_a.onlick = this.click();
          },
     transit:function() {
                 if (!this.slide_img.timer) {
@@ -43,7 +37,6 @@ var bannerSlide = {
                         }
                         bannerSlide.config.leftnumber = -(40*bannerSlide.config.n+(bannerSlide.config.index-1)*800);
                         bannerSlide.slide_img.style.left = bannerSlide.config.leftnumber+"px";
-                        //  alert(bannerSlide.config.index+","+bannerSlide.config.n + "," + left);
                     },20)
                 }
             },
@@ -58,11 +51,11 @@ var bannerSlide = {
                   this.slide_a[i].index = i;
                   this.slide_a[i].onclick = function() {
                       bannerSlide.config.index = this.index;
-                      //  alert(bannerSlide.config.index +","+this.index+","+bannerSlide.config.leftnumber);
                       bannerSlide.config.leftnumber = -(bannerSlide.config.index)*800;
-                      alert(bannerSlide.config.index +","+this.index+","+bannerSlide.config.leftnumber);
+                      bannerSlide.slide_img.style.left = bannerSlide.config.leftnumber+"px";
                       bannerSlide.circle();
-
+                      clearInterval(bannerSlide.banner.timer);
+                      bannerSlide.play();
                   }
               }
           }
