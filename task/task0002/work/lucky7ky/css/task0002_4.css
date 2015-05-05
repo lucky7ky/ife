@@ -1,0 +1,25 @@
+#container {
+    width:350px;
+    margin:200px auto;
+    text-align:center;
+}
+#search {
+    width:285px;
+    margin:0 0 0 20px;
+}
+#data {
+    display:none;
+    width:289px;
+    padding:0;
+    margin:0px 0px 0px 20px;
+    border:1px solid rgb(221, 220, 220);
+    border-top:none;
+    list-style:none;
+    text-align:left;
+}
+.dataLi {
+    padding:2px;
+}
+.dataLi:hover {
+    background-color:rgb(228, 227, 224);
+}

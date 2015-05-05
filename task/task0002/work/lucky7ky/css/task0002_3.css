@@ -1,0 +1,38 @@
+.banner {
+    position:relative;
+    width:800px;
+    height:500px;
+    margin:0 auto;
+    overflow:hidden;
+}
+.slide_img {
+    position:absolute;
+    top:0;
+    left:0;
+    width:4000px;
+}
+.slide_img img {
+    float:left;
+    width:800px;
+}
+
+.slide_btn {
+    position:absolute;
+    bottom:10px;
+    z-index:1;
+    width:800px;
+    height:14px;
+    line-height:14px;
+    text-align:center;
+}
+.slide_btn a {
+    display:inline-block;
+    width:12px;
+    height:12px;
+    border:1px solid white;
+    border-radius:100px;
+    text-decoration:none;
+}
+.slide_btn a.hover {
+    background-color:#F9F5F2;
+}
