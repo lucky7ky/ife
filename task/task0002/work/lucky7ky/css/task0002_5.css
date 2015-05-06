@@ -1,3 +1,7 @@
+#hint {
+    position:fixed;
+    font-size:24px;
+}
 .content {
     position:relative;
     width:500px;
@@ -12,10 +16,10 @@
     border:1px solid black;
     background-color:white;
 }
-.left {
+#left {
     float:left;
 }
-.right {
+#right {
     float:right;
 }
 .box {
@@ -24,8 +28,8 @@
     height:48px;
     border:1px solid black;
     background-color:rgb(110, 148, 229);
-    cursor:move;
+    cursor:pointer;
 }
 .box:hover {
-    background-color:rgb(90, 134, 229);
+    background-color:rgba(110, 148, 229, 0.74);
 }

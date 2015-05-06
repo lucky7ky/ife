@@ -6,25 +6,27 @@
         <link rel="stylesheet" type="text/css" href="css/task0002_5.css">
     </head>
     <body>
+        <h1 id="hint">
+        </h1>
         <div class="content">
-            <div class="container left" title="这里的长方形想去右边。">
-                <div class="box" style="left:50px; top:50px">
+            <div class="container" id="left">
+                <div class="box" style="left:51px; top:51px">
                 </div>
-                <div class="box" style="left:50px; top:100px">
+                <div class="box" style="left:51px; top:101px">
                 </div>
-                <div class="box" style="left:50px; top:150px">
+                <div class="box" style="left:51px; top:151px">
                 </div>
-                <div class="box" style="left:50px; top:200px">
+                <div class="box" style="left:51px; top:201px">
                 </div>
             </div>
-            <div class="container right" title="这里的长方形想去左边。">
-                <div class="box" style="left:350px; top:50px">
+            <div class="container" id="right">
+                <div class="box" style="left:349px; top:51px">
                 </div>
-                <div class="box" style="left:350px; top:100px">
+                <div class="box" style="left:349px; top:101px">
                 </div>
-                <div class="box" style="left:350px; top:150px">
+                <div class="box" style="left:349px; top:151px">
                 </div>
-                <div class="box" style="left:350px; top:200px">
+                <div class="box" style="left:349px; top:201px">
                 </div>
             </div>
         </div>
@@ -35,29 +37,50 @@
                     top:0,
                     x:0,
                     y:0,
+                    n:0,
                 },
                 init: function() {
                     this.content = document.getElementsByClassName("content")[0];
                     this.box = document.getElementsByClassName("box");
                     for(var i = 0; i < this.box.length; i++) {
+                        this.box[i].index = i;
                         this.box[i].onmousedown = function(evt) {
                             var oEvent = evt || event;
-                            drag.config.x= oEvent.clientX - drag.content.offsetLeft - this.offsetLeft;
-                            drag.config.y= oEvent.clientY - drag.content.offsetTop - this.offsetTop;
-                            // alert(drag.config.x + "," + drag.config.y);
+                            drag.config.x = oEvent.clientX - drag.content.offsetLeft - this.offsetLeft;
+                            drag.config.y = oEvent.clientY - drag.content.offsetTop - this.offsetTop;
+                            drag.config.n = this.index;
                             document.onmousemove = function (evt) {
                                 var oEvent = evt || event;
-                                drag.config.left = oEvent.clientX - drag.config.x;
-                                drag.config.top = oEvent.clientY - drag.config.y;
-                                drag.box[i].style.left = drag.config.left + "px";
-                                drag.box[i].style.top = drag.config.top  + "px";
+                                drag.config.left = oEvent.clientX - drag.content.offsetLeft -  drag.config.x;
+                                drag.config.top = oEvent.clientY - drag.content.offsetTop -  drag.config.y;
+                                drag.box[drag.config.n].style.left = drag.config.left + "px";
+                                drag.box[drag.config.n].style.top = drag.config.top  + "px";
+                                drag.box[drag.config.n].style.cursor = "move";
+                                drag.mouseUp();
                             }
                         }
-                      //  if (drag.config.left != 0 || drag.config.top !=0) { 
-                        //    console.log(drag.box[i].left + "," + drag.box[i].top);
-                       // }
                     }
+                },
+                mouseUp:function () {
+                    drag.box[drag.config.n].onmouseup = function () {
+                        if (drag.config.left >= 0 && drag.config.left <= 400 && drag.config.top >=0 && drag.config.top <= 550) {
+                            document.getElementById("hint").innerHTML = "";
+                            this.style.cursor = "pointer";
+                            drag.active();
+                            document.onmousemove = null;
+                            this.onmouseup= null;
+                            }  else {
+                            document.getElementById("hint").innerHTML = "长方形越狱啦";
+                        }
+                    } 
 
+                },
+                active:function () {
+                    if(drag.config.left <= 200) {
+                        drag.box[drag.config.n].style.left = 51 + "px";
+                    } else(drag.config.left > 200) { 
+                        drag.box[drag.config.n].style.left = 349 + "px";
+                    }
                 }
             }
             drag.init();
