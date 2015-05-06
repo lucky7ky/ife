@@ -6,87 +6,45 @@
         <link rel="stylesheet" type="text/css" href="css/task0002_5.css">
     </head>
     <body>
-        <h1 id="hint">
-        </h1>
-        <div class="content">
-            <div class="container" id="left">
-                <div class="box" style="left:51px; top:51px">
+        <div class="aside">
+            <h1 class="taskName">Task2 Demo</h1>
+            <h2 class="author">by Lucky7ky</h2>
+            <ul class="nav">
+                <li><a href="task0002_1.html">小练习1</a></li>
+                <li><a href="task0002_2.html">小练习2</a></li>
+                <li><a href="task0002_3.html">小练习3</a></li>
+                <li><a href="task0002_4.html">小练习4</a></li>
+                <li><a href="task0002_5.html">小练习5</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <h1>小练习5</h1>
+            <h1 id="hint">
+            </h1>
+            <div class="content">
+                <div class="container" id="left">
+                    <div class="box" id="box0" style="left:51px; top:51px">
+                    </div>
+                    <div class="box"  id="box1" style="left:51px; top:101px">
+                    </div>
+                    <div class="box" id="box2" style="left:51px; top:151px">
+                    </div>
+                    <div class="box" id="box3" style="left:51px; top:201px">
+                    </div>
                 </div>
-                <div class="box" style="left:51px; top:101px">
-                </div>
-                <div class="box" style="left:51px; top:151px">
-                </div>
-                <div class="box" style="left:51px; top:201px">
-                </div>
-            </div>
-            <div class="container" id="right">
-                <div class="box" style="left:349px; top:51px">
-                </div>
-                <div class="box" style="left:349px; top:101px">
-                </div>
-                <div class="box" style="left:349px; top:151px">
-                </div>
-                <div class="box" style="left:349px; top:201px">
+                <div class="container" id="right">
+                    <div class="box" id="box4" style="left:349px; top:51px">
+                    </div>
+                    <div class="box" id="box5" style="left:349px; top:101px">
+                    </div>
+                    <div class="box" id="box6"style="left:349px; top:151px">
+                    </div>
+                    <div class="box" id="box7" style="left:349px; top:201px">
+                    </div>
                 </div>
             </div>
         </div>
-        <script>
-            var drag = {
-                config:{
-                    left:0,
-                    top:0,
-                    x:0,
-                    y:0,
-                    n:0,
-                },
-                init: function() {
-                    this.content = document.getElementsByClassName("content")[0];
-                    this.box = document.getElementsByClassName("box");
-                    for(var i = 0; i < this.box.length; i++) {
-                        this.box[i].index = i;
-                        this.box[i].onmousedown = function(evt) {
-                            var oEvent = evt || event;
-                            drag.config.x = oEvent.clientX - drag.content.offsetLeft - this.offsetLeft;
-                            drag.config.y = oEvent.clientY - drag.content.offsetTop - this.offsetTop;
-                            drag.config.n = this.index;
-                            document.onmousemove = function (evt) {
-                                var oEvent = evt || event;
-                                drag.config.left = oEvent.clientX - drag.content.offsetLeft -  drag.config.x;
-                                drag.config.top = oEvent.clientY - drag.content.offsetTop -  drag.config.y;
-                                drag.box[drag.config.n].style.left = drag.config.left + "px";
-                                drag.box[drag.config.n].style.top = drag.config.top  + "px";
-                                drag.box[drag.config.n].style.cursor = "move";
-                                drag.mouseUp();
-                            }
-                        }
-                    }
-                },
-                mouseUp:function () {
-                    drag.box[drag.config.n].onmouseup = function () {
-                        if (drag.config.left >= 0 && drag.config.left <= 400 && drag.config.top >=0 && drag.config.top <= 550) {
-                            document.getElementById("hint").innerHTML = "";
-                            this.style.cursor = "pointer";
-                            drag.active();
-                            document.onmousemove = null;
-                            this.onmouseup= null;
-                            }  else {
-                            document.getElementById("hint").innerHTML = "长方形越狱啦";
-                        }
-                    } 
-
-                },
-                active:function () {
-                    if(drag.config.left <= 200) {
-                        drag.box[drag.config.n].style.left = 51 + "px";
-                        console.log(drag.box[drag.config.n].parentNode);
-                        } else { 
-                        drag.box[drag.config.n].style.left = 349 + "px";
-                    }
-                }
-            }
-            drag.init();
-
+        <script src="js/task0002_5.js">
         </script>
-
     </body>
 </html>

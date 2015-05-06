@@ -6,28 +6,42 @@
         <link rel="stylesheet" type="text/css" href="css/task0002_1.css">
     </head>
     <body>
-        <!--第一阶段 -->
-        <div id="levelFirst">
-            <h1>第一阶段</h1>
-            <input type="text" id="txtFirst" style="width:300px"/>
-            <button onclick="level1()">Click </button>
+        <div class="aside">
+            <h1 class="taskName">Task2 Demo</h1>
+            <h2 class="author">by Lucky7ky</h2>
+            <ul class="nav">
+                <li><a href="task0002_1.html">小练习1</a></li>
+                <li><a href="task0002_2.html">小练习2</a></li>
+                <li><a href="task0002_3.html">小练习3</a></li>
+                <li><a href="task0002_4.html">小练习4</a></li>
+                <li><a href="task0002_5.html">小练习5</a></li>
+            </ul>
         </div>
-        <!--第二阶段 -->
-        <div id="levelSecond">
-            <h1>第二阶段</h1>
-            <textarea id="txtSecond" rows="10" cols="100">
-            </textarea>
-            <button onclick="level2()">Click</button>
-        </div>
-        <!--第三阶段 -->
-        <div id="levelThird">
-            <h1>第三阶段</h1>
-            <textarea id="txtThird" rows="5" cols="100" oninput="OnInput(event)">
-            </textarea>
-            <p id="warning"></p>
-            <button onclick="level3()">Click</button>
+        <div class="main">
+            <h1>小练习1</h1>
+            <!--第一阶段 -->
+            <div id="levelFirst">
+                <h1 class="levelName">第一阶段</h1>
+                <input type="text" id="txtFirst" style="width:300px"/>
+                <button onclick="level1()">Click </button>
+            </div>
+            <!--第二阶段 -->
+            <div id="levelSecond">
+                <h1 class="levelName">第二阶段</h1>
+                <textarea id="txtSecond" rows="10" cols="100">
+                </textarea>
+                <button onclick="level2()">Click</button>
+            </div>
+            <!--第三阶段 -->
+            <div id="levelThird">
+                <h1 class="levelName">第三阶段</h1>
+                <textarea id="txtThird" rows="5" cols="100" oninput="OnInput(event)">
+                </textarea>
+                <p id="warning"></p>
+                <button onclick="level3()">Click</button>
+            </div>
         </div>
         <script src="js/task0002_1.js">
         </script>
-</body>
+    </body>
 </html>

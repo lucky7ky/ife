@@ -3,11 +3,11 @@ function level1() {
     showHobbies('showHobby','levelFirst');
 }
 function level2() {
-    var hobbyArray = getHobbies('txtSecond',/[\n\s,，、；]/);
+    var hobbyArray = getHobbies('txtSecond',/[\n\s,，、;；]/);
     showHobbies('showHobby','levelSecond');
 }
 function level3() {
-    var hobbyArray = getHobbies('txtThird',/[\n\s,，、；]/);
+    var hobbyArray = getHobbies('txtThird',/[\n\s,，、;；]/);
     console.log(hobbyArray);
     for (var i = 0; i < hobbyArray.length; i++) {
         var label = document.createElement("label");

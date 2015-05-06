@@ -1,3 +1,49 @@
+body {
+    margin:0;
+    background-color:rgb(245, 245, 245);
+}
+.aside {
+    position:fixed;
+    width:200px;
+    padding:60px 25px;
+    height:100%;
+    background-color:rgb(80, 144, 229);
+}
+.main {
+    position:absolute;
+    left:250px;
+    right:0px;
+    margin:0;
+    padding:40px 50px;
+    min-height:100%;
+}
+h1.taskName {
+    text-align:center;
+    color:white;
+}
+h2.author {
+    text-align:center;
+    color:white;
+    font-size:16px;
+}
+ul.nav {
+    list-style-type:none;
+    text-align:center;
+    padding:0;
+    margin:50px 0 0 0;
+}
+ul.nav li {
+    border-bottom:1px dashed rgb(215, 212, 212);
+    padding:20px;
+}
+ul.nav li:hover {
+    background-color:rgba(225, 227, 234, 0.16);
+}
+ul.nav li a {
+    text-decoration:none;
+    font-size:18px;
+    color:rgb(238, 239, 239)
+}
 #container {
     width:350px;
     margin:200px auto;
