@@ -78,7 +78,8 @@
                 active:function () {
                     if(drag.config.left <= 200) {
                         drag.box[drag.config.n].style.left = 51 + "px";
-                    } else(drag.config.left > 200) { 
+                        console.log(drag.box[drag.config.n].parentNode);
+                        } else { 
                         drag.box[drag.config.n].style.left = 349 + "px";
                     }
                 }
