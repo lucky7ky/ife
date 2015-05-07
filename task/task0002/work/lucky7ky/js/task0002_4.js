@@ -26,7 +26,7 @@ function clear() {//清空数据列表
 }
 function selectItem() {
     var search = document.getElementById("search");
-    var li = document.getElementsByTagName("li");
+    var li = document.getElementById("data").getElementsByTagName("li");
     var dataArr = [];
     if ( li.length > 0) {
         for (var i = 0; i < li.length; i ++) {
@@ -44,7 +44,6 @@ function selectItem() {
                 li[j].style.background="none";//清空背景色
             }
             li[(dataArr.length-1-upTimes%dataArr.length)].style.background="rgb(228, 227, 224)";//选取时背景色
-            //search.value = dataArr[(dataArr.length-1-upTimes%dataArr.length)];
             upTimes++;
         }
         if (event.keyCode == 13){
