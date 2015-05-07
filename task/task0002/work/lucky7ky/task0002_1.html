@@ -22,21 +22,21 @@
             <!--第一阶段 -->
             <div id="levelFirst">
                 <h1 class="levelName">第一阶段</h1>
-                <input type="text" id="txtFirst" style="width:300px"/>
+                <input type="text" id="txtFirst"/>
                 <button onclick="level1()">Click </button>
+                <p id="p1"></p>
             </div>
             <!--第二阶段 -->
             <div id="levelSecond">
                 <h1 class="levelName">第二阶段</h1>
-                <textarea id="txtSecond" rows="10" cols="100">
-                </textarea>
+                <textarea id="txtSecond"></textarea>
                 <button onclick="level2()">Click</button>
+                <p id="p2"></p>
             </div>
             <!--第三阶段 -->
             <div id="levelThird">
                 <h1 class="levelName">第三阶段</h1>
-                <textarea id="txtThird" rows="5" cols="100" oninput="OnInput(event)">
-                </textarea>
+                <textarea id="txtThird" oninput="onInput()"></textarea>
                 <p id="warning"></p>
                 <button onclick="level3()">Click</button>
             </div>

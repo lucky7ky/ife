@@ -28,7 +28,7 @@ function countTime() {//倒计时
         }
     }
 }
-function IsDate(){ //验证日期格式   TODO 完善日期格式验证
+function IsDate(){ //验证日期格式
     var str = document.getElementById('date').value.trim();    
     if(str.length!=0) {    
         var reg = /^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/;     
