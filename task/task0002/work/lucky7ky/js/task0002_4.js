@@ -13,6 +13,9 @@ function showData() {
             var li = document.createElement("li");
             li.setAttribute("class","dataLi");
             li.innerHTML = suggestData[i];
+            li.onclick = function () {
+                document.getElementById("search").value = this.innerHTML;//鼠标点击选中时提示内容变更到输入框中
+            }
             ul.appendChild(li);
         }
         ul.style.display ="block";
@@ -32,24 +35,24 @@ function selectItem() {
         for (var i = 0; i < li.length; i ++) {
             dataArr[i] = li[i].innerHTML;
         }
-        if (event.keyCode == 40) {
+        if (event.keyCode == 40) {//向下方向键
             for (var j = 0; j < li.length; j++) {
                 li[j].style.background="none";//清空背景色
             }
             li[downTimes%dataArr.length].style.background="rgb(228, 227, 224)";//选取时背景色
             downTimes++;
         }
-        if (event.keyCode == 38) {
+        if (event.keyCode == 38) {//向上方向键
             for (var j = 0; j < li.length; j++) {
                 li[j].style.background="none";//清空背景色
             }
             li[(dataArr.length-1-upTimes%dataArr.length)].style.background="rgb(228, 227, 224)";//选取时背景色
             upTimes++;
         }
-        if (event.keyCode == 13){
+        if (event.keyCode == 13){ //回车
             for (var j = 0; j < li.length; j++) {
-                if (li[j].style.background =="rgb(228, 227, 224)"){
-                    search.value = dataArr[j];
+                if (li[j].style.background =="rgb(228, 227, 224)"){//根据背景色判断是否为选中的项
+                    search.value = dataArr[j];//选中时提示内容变更到输入框中
                 }
 
             }
