@@ -69,6 +69,7 @@ ul.nav li a {
 }
 .dataLi {
     padding:2px;
+    cursor:pointer;
 }
 .dataLi:hover {
     background-color:rgb(228, 227, 224);

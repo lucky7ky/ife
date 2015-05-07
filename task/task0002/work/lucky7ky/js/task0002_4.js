@@ -14,6 +14,11 @@ function showData() {
             li.setAttribute("class","dataLi");
             li.innerHTML = suggestData[i];
             li.onclick = function () {
+                var lis =  document.getElementById("data").getElementsByTagName("li");
+                for (var j = 0; j < lis.length; j++) {
+                    lis[j].style.background="none";//清空背景色
+                }
+                this.style.background="rgb(228, 227, 224)";//选取时背景色
                 document.getElementById("search").value = this.innerHTML;//鼠标点击选中时提示内容变更到输入框中
             }
             ul.appendChild(li);
@@ -29,29 +34,29 @@ function clear() {//清空数据列表
 }
 function selectItem() {
     var search = document.getElementById("search");
-    var li = document.getElementById("data").getElementsByTagName("li");
+    var lis = document.getElementById("data").getElementsByTagName("li");
     var dataArr = [];
-    if ( li.length > 0) {
-        for (var i = 0; i < li.length; i ++) {
-            dataArr[i] = li[i].innerHTML;
+    if ( lis.length > 0) {
+        for (var i = 0; i < lis.length; i ++) {
+            dataArr[i] = lis[i].innerHTML;
         }
         if (event.keyCode == 40) {//向下方向键
-            for (var j = 0; j < li.length; j++) {
-                li[j].style.background="none";//清空背景色
+            for (var j = 0; j < lis.length; j++) {
+                lis[j].style.background="none";//清空背景色
             }
-            li[downTimes%dataArr.length].style.background="rgb(228, 227, 224)";//选取时背景色
+            lis[downTimes%dataArr.length].style.background="rgb(228, 227, 224)";//选取时背景色
             downTimes++;
         }
         if (event.keyCode == 38) {//向上方向键
-            for (var j = 0; j < li.length; j++) {
-                li[j].style.background="none";//清空背景色
+            for (var j = 0; j < lis.length; j++) {
+                lis[j].style.background="none";//清空背景色
             }
-            li[(dataArr.length-1-upTimes%dataArr.length)].style.background="rgb(228, 227, 224)";//选取时背景色
+            lis[(dataArr.length-1-upTimes%dataArr.length)].style.background="rgb(228, 227, 224)";//选取时背景色
             upTimes++;
         }
         if (event.keyCode == 13){ //回车
-            for (var j = 0; j < li.length; j++) {
-                if (li[j].style.background =="rgb(228, 227, 224)"){//根据背景色判断是否为选中的项
+            for (var j = 0; j < lis.length; j++) {
+                if (lis[j].style.background =="rgb(228, 227, 224)"){//根据背景色判断是否为选中的项
                     search.value = dataArr[j];//选中时提示内容变更到输入框中
                 }
 
