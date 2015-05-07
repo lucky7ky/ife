@@ -102,7 +102,7 @@ function trim(str) { //去掉字符串所有空格字符
     }
     return result;
 }
-console.log(trim("  1 2 3   "));// '123'
+//console.log(trim("  1 2 3   "));// '123'
 
 
 function trim(str) {// 只去除头尾空格字符
@@ -128,6 +128,52 @@ function trim(str) {//正则表达式
    console.log(str); // 'hi!'
    */
 
+// 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
+function each(arr, fn) {
+    for (var i = 0; i < arr.length;i++) {
+        // fn(arr[i]);
+        fn(arr[i],i);
+    }
+}
+
+// 其中fn函数可以接受两个参数：item和index
+/*
+   使用示例
+   var arr = ['java', 'c', 'php', 'html'];
+   function output(item) {
+   console.log(item)
+   }
+   each(arr, output);  // java, c, php, html
+
+   使用示例
+   var arr = ['java', 'c', 'php', 'html'];
+   function output(item, index) {
+   console.log(index + ': ' + item)
+   }
+   each(arr, output);  // 0:java, 1:c, 2:php, 3:html
+   */
+
+
+// 获取一个对象里面第一层元素的数量，返回一个整数
+function getObjectLength(obj) {
+    var n = 0;
+    for ( i in obj) {
+        n++;
+    }
+    return n ;
+}
+
+/* 使用示例
+var obj = {
+    a: 1,
+    b: 2,
+    c: {
+        c1: 3,
+        c2: 4
+    }
+};
+console.log(getObjectLength(obj)); // 3
+*/
 
 //util.js只完成了一小部分，担心时间不够，先把后面的五个小练习完成了，
 //今天得交作业并开始任务三了，后续有时间再把这块补上。
