@@ -1,5 +1,5 @@
 function countTime() {//倒计时
-    var dateStr = IsDate();
+    var dateStr = isDate();
     var dateArr = [];
     if (typeof dateStr != "undefined") {
         dateArr = dateStr.split('-');
@@ -28,7 +28,7 @@ function countTime() {//倒计时
         }
     }
 }
-function IsDate(){ //验证日期格式
+function isDate(){ //验证日期格式
     var str = document.getElementById('date').value.trim();    
     if(str.length!=0) {    
         var reg = /^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/;     
