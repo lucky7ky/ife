@@ -1,6 +1,7 @@
 function countTime() {//倒计时
     var dateStr = isDate();
     var dateArr = [];
+    var startDate = new Date();
     if (typeof dateStr != "undefined") {
         dateArr = dateStr.split('-');
         document.getElementById('setY').innerHTML = dateArr[0];
@@ -8,7 +9,6 @@ function countTime() {//倒计时
         document.getElementById('setD').innerHTML = dateArr[2];
         var setDate = dateStr.replace(/-/g,'/');
         var endDate = new Date(setDate);
-        var startDate = new Date();
         var t = endDate.getTime() - startDate.getTime();
         if (t >= 0) {
             var d=Math.floor(t/1000/60/60/24); 
@@ -22,7 +22,7 @@ function countTime() {//倒计时
             if (d == 0 && h == 0 && m == 0 && s == 0){
                 return;
             }
-            var t = setTimeout('countTime()',1000);
+            var t = setTimeout('countTime()',1000-(new Date().getTime()-startDate.getTime()));
         } else {
             alert("请准确输入未来某天日期");
         }
